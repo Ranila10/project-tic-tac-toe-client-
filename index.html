@@ -1,17 +1,57 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe</title>
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  <title>Tic Tac Toe</title>
+</head>
+<body>
+  <section class="title">
+    <h1>Tic Tac Toe</h1>
+  </section>
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <h3>Sign Up</h3>
+  <form id="sign-up-form">
+    <input name="credentials[email]" type="email" placeholder="Email">
+    <input name="credentials[password]" type="password" placeholder="Enter password">
+    <input name="credentials[password_confirmation]" type="password" placeholder="Enter password again">
+    <button type="submit">Sign Up</button>
+  </form>
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <h1>Browser Template</h1>
-    </body>
+  <h3>Sign In</h3>
+  <form id="sign-in-form">
+    <input name="credentials[email]" type="email" placeholder="Email">
+    <input name="credentials[password]" type="password" placeholder="Enter password again">
+    <button type="submit">Sign In</button>
+  </form>
+
+  <h3>Sign Out</h3>
+    <button id="sign-out-form" type="button">Sign Out</button>
+<h3></h3>
+    <button type="submit">New Game</button>
+
+  <section id="auth-display"></section>
+
+<div class="board" id="container">
+  <div data-index="1" class="cell"></div>
+  <div data-index="2" class="cell"></div>
+  <div data-index="3" class="cell"></div>
+  <div data-index="4" class="cell"></div>
+  <div data-index="5" class="cell"></div>
+  <div data-index="6" class="cell"></div>
+  <div data-index="7" class="cell"></div>
+  <div data-index="8" class="cell"></div>
+  <div data-index="9" class="cell"></div>
+
+</div>
+  <div id="game-over-area" class="hidden">
+    <h2 id="game-over-text">Winner is X</h2>
+    <button id="play again">Play Again</button>
+  </div>
+  <div id="strike" class="stike"></div>
+</body>
 </html>

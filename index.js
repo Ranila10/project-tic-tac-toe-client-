@@ -1,7 +1,19 @@
+
+const cells = document.querySelectorAll('.cell');
+const PLAYER_X = 'X';
+const PLAYER_O = 'O';
+const turn = PLAYER_X;
+
+const boardState = Array(cells.length);
+boardState.fill(null);
+
+const strike = document.getElementById("strike");
+gameOverArea = document.getElementById("game-over-area");
+gameOverText = document.getElementById("game-over-text");
+const playAgain = document.getElementById("play-again");
+
 // user require with a reference to bundle the file and use it in this file
 // var example = require('./example');
-
-import 'bootstrap'
 
 // allows usage of new JS features
 require('babel-polyfill')
@@ -11,4 +23,4 @@ require('babel-polyfill')
 require('./app/app.js')
 
 // styles
-require('./app/styles/index.scss')
+require('./index.scss')
