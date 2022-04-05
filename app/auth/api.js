@@ -16,11 +16,11 @@ const signUp = function (data) {
     data
   })
 }
-const newGame = function () {
-	return $.ajax({
-		url: 'https://tic-tac-toe-api-development.herokuapp.com/new game'
-	})
-}
+// const newGame = function () {
+// 	return $.ajax({
+// 		url: 'https://tic-tac-toe-api-development.herokuapp.com/new game'
+// 	})
+// }
 
 const signOut = function () {
   return $.ajax({

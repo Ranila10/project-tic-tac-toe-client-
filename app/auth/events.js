@@ -75,6 +75,5 @@ module.exports = {
   onSignIn,
   onSignUp,
   onSignOut,
-  onclick,
-  onNewGame
+  onclick
 }
