@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
   <title>Tic Tac Toe</title>
 </head>
+
 <body>
   <section class="title">
     <h1>Tic Tac Toe</h1>
@@ -30,28 +32,29 @@
   </form>
 
   <h3>Sign Out</h3>
-    <button id="sign-out-form" type="button">Sign Out</button>
-<h3></h3>
-    <button type="submit">New Game</button>
+  <form id="sign-out-form">
+    <button type="submit">sign out</button>
+  </form>
+  <h3></h3>
+  <button type="submit">New Game</button>
 
   <section id="auth-display"></section>
 
-<div class="board" id="container">
-  <div data-index="1" class="cell"></div>
-  <div data-index="2" class="cell"></div>
-  <div data-index="3" class="cell"></div>
-  <div data-index="4" class="cell"></div>
-  <div data-index="5" class="cell"></div>
-  <div data-index="6" class="cell"></div>
-  <div data-index="7" class="cell"></div>
-  <div data-index="8" class="cell"></div>
-  <div data-index="9" class="cell"></div>
-
-</div>
+  <div class="board" id="board">
+    <div class="cell" id="c0" data-cell></div>
+    <div class="cell" id="c1" data-cell></div>
+    <div class="cell" id="c2" data-cell></div>
+    <div class="cell" id="c3" data-cell></div>
+    <div class="cell" id="c4" data-cell></div>
+    <div class="cell" id="c5" data-cell></div>
+    <div class="cell" id="c6" data-cell></div>
+    <div class="cell" id="c7" data-cell></div>
+    <div class="cell" id="c8" data-cell></div>
+  </div>
   <div id="game-over-area" class="hidden">
-    <h2 id="game-over-text">Winner is X</h2>
     <button id="play again">Play Again</button>
   </div>
   <div id="strike" class="stike"></div>
 </body>
+
 </html>

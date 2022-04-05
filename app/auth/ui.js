@@ -4,6 +4,9 @@ const onSignInSuccess = function (response) {
 	store.user = response.user
 	console.log(response)
 }
+const onSignInFailure = function () {
+	$('#auth-display').html('<p>Error while signing in</p>')
+}
 const onSignUpSuccess = function () {
 	console.log('signUp')
 	console.log()
@@ -22,7 +25,7 @@ const onSignOutFailure = function () {
 
 module.exports = {
 	onSignInSuccess,
-	// onSignInFailure,
+	onSignInFailure,
 	onSignUpSuccess,
 	onSignUpFailure,
 	onSignOutSuccess,

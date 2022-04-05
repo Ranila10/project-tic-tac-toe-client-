@@ -1,16 +1,16 @@
 
-const cells = document.querySelectorAll('.cell');
-const PLAYER_X = 'X';
-const PLAYER_O = 'O';
-const turn = PLAYER_X;
+const cells = document.querySelectorAll('.cell')
+const PLAYER_X = 'X'
+const PLAYER_O = 'O'
+const turn = PLAYER_X
 
-const boardState = Array(cells.length);
-boardState.fill(null);
+const boardState = Array(cells.length)
+boardState.fill(null)
 
-const strike = document.getElementById("strike");
-gameOverArea = document.getElementById("game-over-area");
-gameOverText = document.getElementById("game-over-text");
-const playAgain = document.getElementById("play-again");
+const strike = document.getElementById('strike')
+gameOverArea = document.getElementById('game-over-area')
+gameOverText = document.getElementById('game-over-text')
+const playAgain = document.getElementById('play-again')
 
 // user require with a reference to bundle the file and use it in this file
 // var example = require('./example');
