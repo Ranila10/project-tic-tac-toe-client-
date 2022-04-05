@@ -5,27 +5,27 @@ body {
     background-color: green;
 }
 
-#container {
-     display: grid;
-     grid-template-columns: 100px 100px 100px;
-     grid-template-rows: 100px 100px 100px;
-     cursor: pointer;
+#board {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    cursor: pointer;
 }
-.cell { 
-  color: green;
-  margin: 10px;
-  background-color: palevioletred;
-  font-size: 2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.cell {
+    color: green;
+    margin: 10px;
+    background-color: palevioletred;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1 {
     color: palevioletred;
 }
 h3 {
-    color: palevioletred
+    color: palevioletred;
 }
 
 // .x-hover:hover::after {
@@ -52,4 +52,3 @@ h3 {
     font-size: 40px;
     display: block;
 }
-

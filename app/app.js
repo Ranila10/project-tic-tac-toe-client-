@@ -9,6 +9,19 @@ $(() => {
   $('.cell').on('click', authEvents.onclick)
 })
 
+// #board {
+//   display: grid;
+//   grid-template-columns: repeat(3, 2em);
+//   grid-auto-rows: 2em;
+//   text-align: center;
+// }
+
+// .scores {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-around;
+// }
+
 const currentPlayer = ['X', 'O']
 function nameless () {
   currentPlayer.push(currentPlayer.shift())
