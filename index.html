@@ -40,21 +40,24 @@
 
   <section id="auth-display"></section>
 
-  <div class="board" id="board">
-    <div class="cell" id="c0" data-cell></div>
-    <div class="cell" id="c1" data-cell></div>
-    <div class="cell" id="c2" data-cell></div>
-    <div class="cell" id="c3" data-cell></div>
-    <div class="cell" id="c4" data-cell></div>
-    <div class="cell" id="c5" data-cell></div>
-    <div class="cell" id="c6" data-cell></div>
-    <div class="cell" id="c7" data-cell></div>
-    <div class="cell" id="c8" data-cell></div>
-  </div>
-  <div id="game-over-area" class="hidden">
-    <button id="play again">Play Again</button>
-  </div>
-  <div id="strike" class="stike"></div>
+  <div id="game-status">Game status: </div>
+  <div class="container">
+    <div class="row">
+      <div data-cell-indexc="0" id="0" class="col-4 box"></div>
+      <div data-cell-indexc="1" id="1" class="col-4 box"></div>
+      <div data-cell-indexc="2" id="2" class="col-4 box"></div>
+      <div data-cell-indexc="3" id="3" class="col-4 box"></div>
+      <div data-cell-indexc="4" id="4" class="col-4 box"></div>
+      <div data-cell-indexc="5" id="5" class="col-4 box"></div>
+      <div data-cell-indexc="6" id="6" class="col-4 box"></div>
+      <div data-cell-indexc="7" id="7" class="col-4 box"></div>
+      <div data-cell-indexc="8" id="8" class="col-4 box"></div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <button type="button" id="restart-button">RESTART BUTTON</button>
+      </div>
+    </div>
 </body>
 
 </html>
