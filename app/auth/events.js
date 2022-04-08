@@ -44,10 +44,28 @@ const onSignOut = function (event) {
     .then(() => authUi.onSignOutSuccess())
     .catch(() => authUi.onSignOutFailure())
 }
+const onNewGame = function (event) {
+  $('#auth-display').html('<p>player X make your move</p>')
+  $('#board').show()
+  $('#game').show()
+//   $('#new-game').hide()
+  $('#play-again').show()
+  $('#sign-out-button').show()
+  event.preventDefault()
+  console.log('now here')
+  authApi.newGame()
+    .then(() => authUi.onNewGameSuccess())
+    .catch(() => authUi.onNewGameFailure())
+}
+const playerX = 'X'
+const playerO = 'O'
+const currentPlayer = playerX
+const gameOver = false
 let clicked = true
+const box = ['', '', '', '', '', '', '', '']
 
 const onBoxClick = function () {
-  if (click) {
+  if (onBoxClick) {
     $(this).text('X').unbind()
     clicked = false
     store.game[0] = 'X'
@@ -63,7 +81,6 @@ const onRestartClick = function () {
   $('.box').text('')
   $('.box').bind('click', onBoxClick)
 }
-
 // const WIN_COMB = [
 //   [0, 1, 2],
 //   [3, 4, 5],
@@ -83,5 +100,7 @@ module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onBoxClick
+  onBoxClick,
+  onNewGame,
+  onRestartClick
 }

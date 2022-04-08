@@ -19,7 +19,17 @@ const signUp = function (data) {
 const newGame = function () {
   return $.ajax({
     method: 'POST',
-    url: 'https://tic-tac-toe-api-production.herokuapp.com/new-game',
+    url: 'https://tic-tac-toe-api-production.herokuapp.com/games',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+
+    }
+  })
+}
+const boxClick = function () {
+  return $.ajax({
+    method: 'POST',
+    url: 'https://tic-tac-toe-api-production.herokuapp.com/boxClick',
     data
   })
 }
@@ -38,5 +48,7 @@ const signOut = function () {
 module.exports = {
   signIn,
   signUp,
-  signOut
+  signOut,
+  boxClick,
+  newGame
 }

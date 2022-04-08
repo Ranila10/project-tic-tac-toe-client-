@@ -22,6 +22,12 @@ const onSignOutSuccess = function () {
 const onSignOutFailure = function () {
   $('#auth-display').html('<p>Error while signing out</p>')
 }
+const onNewGameFailure = function () {
+  $('#auth-display').html('<p>Try again</p>')
+}
+const onNewGameSuccess = function () {
+  $('#auth-display').html('<p>Try again</p>')
+}
 
 module.exports = {
   onSignInSuccess,
@@ -29,5 +35,7 @@ module.exports = {
   onSignUpSuccess,
   onSignUpFailure,
   onSignOutSuccess,
-  onSignOutFailure
+  onSignOutFailure,
+  onNewGameFailure,
+  onNewGameSuccess
 }

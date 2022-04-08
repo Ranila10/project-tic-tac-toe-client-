@@ -5,6 +5,7 @@ $(() => {
   $('#sign-in-form').on('submit', authEvents.onSignIn)
 
   $('#sign-out-form').on('submit', authEvents.onSignOut)
+  $('#new-game').on('click', authEvents.onNewGame)
   // game listeners
   $('.box').on('click', authEvents.boxClicked)
   // reset
