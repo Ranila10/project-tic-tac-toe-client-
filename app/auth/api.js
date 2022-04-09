@@ -30,7 +30,7 @@ const boxClick = function () {
   return $.ajax({
     method: 'POST',
     url: 'https://tic-tac-toe-api-production.herokuapp.com/boxClick',
-    data
+
   })
 }
 

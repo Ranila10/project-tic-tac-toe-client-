@@ -125,10 +125,6 @@ const restart = function () {
   gameOver = false
 }
 
-// const scoreX = 0
-// const scoreO = 0
-// const scoreDraw = 0
-
 module.exports = {
   onSignUp,
   onSignIn,
