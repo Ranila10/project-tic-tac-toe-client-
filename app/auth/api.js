@@ -1,4 +1,4 @@
-;('use strict')
+('use strict')
 
 const store = require('../store.js')
 const signIn = function (data) {

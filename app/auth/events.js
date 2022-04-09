@@ -3,6 +3,7 @@ const authApi = require('./api.js')
 const authUi = require('./ui.js')
 const getFormFields = require('../../lib/get-form-fields.js')
 const store = require('../store.js')
+let gameOver = false
 
 const onSignIn = function (event) {
   event.preventDefault()
@@ -48,7 +49,7 @@ const onNewGame = function (event) {
   $('#auth-display').html('<p>player X make your move</p>')
   $('#board').show()
   $('#game').show()
-//   $('#new-game').hide()
+  //   $('#new-game').hide()
   $('#play-again').show()
   $('#sign-out-button').show()
   event.preventDefault()
@@ -59,38 +60,70 @@ const onNewGame = function (event) {
 }
 const playerX = 'X'
 const playerO = 'O'
-const currentPlayer = playerX
-const gameOver = false
-let clicked = true
-const box = ['', '', '', '', '', '', '', '']
+let currentPlayer = playerX
+store.cells = ['', '', '', '', '', '', '', '', '']
 
-const onBoxClick = function () {
-  if (onBoxClick) {
-    $(this).text('X').unbind()
-    clicked = false
-    store.game[0] = 'X'
-    console.log(store.game)
+const boxClicked = function () {
+  if (gameOver === false) {
+    if (currentPlayer === playerX) {
+      $(this).text('X').unbind()
+      const indx = $(this).attr('id')
+      store.cells[indx] = 'X'
+      console.log(store.cells)
+    } else {
+      $(this).text('O').unbind()
+      const indx = $(this).attr('id')
+      store.cells[indx] = 'O'
+      console.log(store.cells)
+    }
   } else {
-    $(this).text('O').unbind()
-    clicked = true
-    store.game[1] = 'O'
+    console.log('Restart the game!')
   }
-  console.log(authApi.gameStatus())
+
+  if ((currentPlayer === store.cells[0]) && (currentPlayer === store.cells[1]) && (currentPlayer === store.cells[2])) {
+    console.log(currentPlayer + ' win')
+    gameOver = true
+  } else if ((currentPlayer === store.cells[3]) && (currentPlayer === store.cells[4]) && (currentPlayer === store.cells[5])) {
+    console.log(currentPlayer + ' win')
+    gameOver = true
+  } else if ((currentPlayer === store.cells[6]) && (currentPlayer === store.cells[7]) && (currentPlayer === store.cells[8])) {
+    console.log(currentPlayer + ' win')
+    gameOver = true
+  } else if ((currentPlayer === store.cells[0]) && (currentPlayer === store.cells[3]) && (currentPlayer === store.cells[6])) {
+    console.log(currentPlayer + ' win')
+    gameOver = true
+  } else if ((currentPlayer === store.cells[1]) && (currentPlayer === store.cells[4]) && (currentPlayer === store.cells[7])) {
+    console.log(currentPlayer + ' win')
+    gameOver = true
+  } else if ((currentPlayer === store.cells[2]) && (currentPlayer === store.cells[5]) && (currentPlayer === store.cells[8])) {
+    console.log(currentPlayer + ' win')
+    gameOver = true
+  } else if ((currentPlayer === store.cells[0]) && (currentPlayer === store.cells[4]) && (currentPlayer === store.cells[8])) {
+    console.log(currentPlayer + ' win')
+    gameOver = true
+  } else if ((currentPlayer === store.cells[2]) && (currentPlayer === store.cells[4]) && (currentPlayer === store.cells[6])) {
+    console.log(currentPlayer + ' win')
+    gameOver = true
+  }
+
+  if (!store.cells.includes('') && gameOver === false) {
+    console.log('game tie!')
+  }
+
+  if (currentPlayer === playerX) {
+    currentPlayer = playerO
+  } else {
+    currentPlayer = playerX
+  }
+
+// console.log(authApi.gameStatus())
 }
-const onRestartClick = function () {
+const restart = function () {
   $('.box').text('')
-  $('.box').bind('click', onBoxClick)
+  $('.box').bind('click', boxClicked)
+  store.cells = ['', '', '', '', '', '', '', '', '']
+  gameOver = false
 }
-// const WIN_COMB = [
-//   [0, 1, 2],
-//   [3, 4, 5],
-//   [6, 7, 8],
-//   [0, 3, 6],
-//   [1, 4, 7],
-//   [2, 5, 8],
-//   [0, 4, 8],
-//   [2, 4, 6]
-// ]
 
 // const scoreX = 0
 // const scoreO = 0
@@ -100,7 +133,7 @@ module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onBoxClick,
+  boxClicked,
   onNewGame,
-  onRestartClick
+  restart
 }
