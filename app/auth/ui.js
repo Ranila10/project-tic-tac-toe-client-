@@ -10,23 +10,23 @@ const onSignInFailure = function () {
 const onSignUpSuccess = function () {
   console.log('signUp')
   console.log()
-  $('#auth-display').html('<p>Error while signing up</p>')
+  $('#auth-display').html('<p> sign up successfully</p>')
 }
 const onSignUpFailure = function () {
-  $('#auth-display').html('<p>Error while signing up</p>')
+  $('#auth-display').html('<p> signing up failure</p>')
 }
 
 const onSignOutSuccess = function () {
-  $('#auth-display').html('<p>User signed out successfully</p>')
+  $('#auth-display').html('<p> signed out successfully</p>')
 }
 const onSignOutFailure = function () {
-  $('#auth-display').html('<p>Error while signing out</p>')
+  $('#auth-display').html('<p> signing out failure</p>')
 }
 const onNewGameFailure = function () {
-  $('#auth-display').html('<p>Try again</p>')
+  $('#auth-display').html('<p>Try Again</p>')
 }
 const onNewGameSuccess = function () {
-  $('#auth-display').html('<p>Try again</p>')
+  $('#auth-display').html('<p>Start Playing</p>')
 }
 
 module.exports = {

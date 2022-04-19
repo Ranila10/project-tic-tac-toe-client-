@@ -8,7 +8,6 @@ let gameOver = false
 const onSignIn = function (event) {
   event.preventDefault()
   console.log('now here')
-
   const form = event.target
   const data = getFormFields(form)
   console.log(data)
