@@ -81,33 +81,35 @@ const boxClicked = function () {
   }
 
   if ((currentPlayer === store.cells[0]) && (currentPlayer === store.cells[1]) && (currentPlayer === store.cells[2])) {
-    console.log(currentPlayer + ' win')
+    // console.log(currentPlayer + ' win')
     gameOver = true
+    $('#game-status').html(currentPlayer + ' win')
   } else if ((currentPlayer === store.cells[3]) && (currentPlayer === store.cells[4]) && (currentPlayer === store.cells[5])) {
-    console.log(currentPlayer + ' win')
+    $('#game-status').html(currentPlayer + ' win')
+    // console.log(currentPlayer + ' win')
     gameOver = true
   } else if ((currentPlayer === store.cells[6]) && (currentPlayer === store.cells[7]) && (currentPlayer === store.cells[8])) {
-    console.log(currentPlayer + ' win')
+    $('#game-status').html(currentPlayer + ' win')
     gameOver = true
   } else if ((currentPlayer === store.cells[0]) && (currentPlayer === store.cells[3]) && (currentPlayer === store.cells[6])) {
-    console.log(currentPlayer + ' win')
+    $('#game-status').html(currentPlayer + ' win')
     gameOver = true
   } else if ((currentPlayer === store.cells[1]) && (currentPlayer === store.cells[4]) && (currentPlayer === store.cells[7])) {
-    console.log(currentPlayer + ' win')
+    $('#game-status').html(currentPlayer + ' win')
     gameOver = true
   } else if ((currentPlayer === store.cells[2]) && (currentPlayer === store.cells[5]) && (currentPlayer === store.cells[8])) {
-    console.log(currentPlayer + ' win')
+    $('#game-status').html(currentPlayer + ' win')
     gameOver = true
   } else if ((currentPlayer === store.cells[0]) && (currentPlayer === store.cells[4]) && (currentPlayer === store.cells[8])) {
-    console.log(currentPlayer + ' win')
+    $('#game-status').html(currentPlayer + ' win')
     gameOver = true
   } else if ((currentPlayer === store.cells[2]) && (currentPlayer === store.cells[4]) && (currentPlayer === store.cells[6])) {
-    console.log(currentPlayer + ' win')
+    $('#game-status').html(currentPlayer + ' win')
     gameOver = true
   }
 
   if (!store.cells.includes('') && gameOver === false) {
-    console.log('game tie!')
+    $('#game-status').html('game tie')
   }
 
   if (currentPlayer === playerX) {
