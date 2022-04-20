@@ -5,10 +5,9 @@ const onSignInSuccess = function (response) {
   $('#sign-in-form').hide()
   $('#sign-up-form').hide()
   $('#new-game').show()
-  $('#board').show()
   $('#sign-out-form').show()
   $('#restart').show()
-  $('.game-status').show()
+  $('#game-status').show()
   store.user = response.user
   console.log(response)
 }
@@ -34,7 +33,7 @@ const onSignOutSuccess = function () {
   $('#board').hide()
   $('#restart').hide()
   $('#new-game').hide()
-  $('.game-status').hide()
+  $('#game-status').hide()
 }
 const onSignOutFailure = function () {
   $('#auth-display').html('<p> signing out failure</p>')
@@ -45,6 +44,7 @@ const onNewGameFailure = function () {
 const onNewGameSuccess = function (response) {
   store.game = response.game
   $('#auth-display').html('<p>Start Playing</p>')
+  $('#board').show()
 }
 
 module.exports = {

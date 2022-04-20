@@ -113,7 +113,7 @@ const boxClicked = function () {
   }
 
   if (!store.cells.includes('') && gameOver === false) {
-    $('#game-status').html('game tie')
+    $('#game-status').html('game tie').show()
   }
 
   if (currentPlayer === playerX) {
