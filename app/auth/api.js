@@ -26,10 +26,23 @@ const newGame = function () {
     }
   })
 }
-const boxClick = function () {
+const update = function (index, value, over) {
   return $.ajax({
-    method: 'POST',
-    url: 'https://tic-tac-toe-api-production.herokuapp.com/boxClick',
+    method: 'PATCH',
+    url: 'https://tic-tac-toe-api-production.herokuapp.com/games/' + store.game._id,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+
+    },
+    data: {
+      game: {
+        cell: {
+          index: index,
+          value: value
+        },
+        over: over
+      }
+    }
 
   })
 }
@@ -49,6 +62,6 @@ module.exports = {
   signIn,
   signUp,
   signOut,
-  boxClick,
+  update,
   newGame
 }

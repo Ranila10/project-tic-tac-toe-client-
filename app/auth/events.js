@@ -54,9 +54,10 @@ const onNewGame = function (event) {
   event.preventDefault()
   console.log('now here')
   authApi.newGame()
-    .then(() => authUi.onNewGameSuccess())
+    .then((response) => authUi.onNewGameSuccess(response))
     .catch(() => authUi.onNewGameFailure())
 }
+
 const playerX = 'X'
 const playerO = 'O'
 let currentPlayer = playerX
@@ -67,11 +68,15 @@ const boxClicked = function () {
     if (currentPlayer === playerX) {
       $(this).text('X').unbind()
       const indx = $(this).attr('id')
+      authApi.update(indx, 'x', gameOver)
+        .then(response => console.log(response))
       store.cells[indx] = 'X'
       console.log(store.cells)
     } else {
       $(this).text('O').unbind()
       const indx = $(this).attr('id')
+      authApi.update(indx, 'O', gameOver)
+        .then(response => console.log(response))
       store.cells[indx] = 'O'
       console.log(store.cells)
     }

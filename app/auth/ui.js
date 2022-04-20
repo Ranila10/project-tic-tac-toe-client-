@@ -25,7 +25,8 @@ const onSignOutFailure = function () {
 const onNewGameFailure = function () {
   $('#auth-display').html('<p>Try Again</p>')
 }
-const onNewGameSuccess = function () {
+const onNewGameSuccess = function (response) {
+  store.game = response.game
   $('#auth-display').html('<p>Start Playing</p>')
 }
 
