@@ -14,4 +14,5 @@ $(() => {
   $('#sign-out-form').hide()
   $('#restart').hide()
   $('#new-game').hide()
+  $('.game-status').hide()
 })
