@@ -30,16 +30,11 @@
     <input name="credentials[password]" type="password" placeholder="Enter password again">
     <button type="submit">Sign In</button>
   </form>
-
-  <h3>Sign Out</h3>
-  <form id="sign-out-form">
-    <button type="submit">sign out</button>
-  </form>
   <h3></h3>
   <button type="submit" id="new-game">New Game</button>
 
   <section id="auth-display"></section>
-  <div id="game-status">Game status</div>
+
   <div class="container">
     <div class="row" id="board">
       <div data-cell-index="0" id="0" class="col-4 box"></div>
@@ -55,6 +50,10 @@
     <div class="container">
       <div class="row">
         <button type="button" id="restart">RESTART BUTTON</button>
+
+        <form id="sign-out-form">
+          <button type="submit">sign out</button>
+        </form>
       </div>
     </div>
   </div>

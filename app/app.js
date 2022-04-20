@@ -10,4 +10,8 @@ $(() => {
   $('.box').on('click', authEvents.boxClicked)
   // reset
   $('#restart').on('click', authEvents.restart)
+  $('#board').hide()
+  $('#sign-out-form').hide()
+  $('#restart').hide()
+  $('#new-game').hide()
 })
